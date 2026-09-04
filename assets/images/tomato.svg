@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<rect width="900" height="500" fill="#ffe1dc"/>
+<circle cx="750" cy="90" r="55" fill="#f5c542"/>
+<path d="M0 350 Q220 250 450 350 T900 320 V500 H0Z" fill="#d9534f" opacity=".65"/>
+<path d="M0 400 Q220 320 450 400 T900 370 V500 H0Z" fill="#d9534f"/>
+<text x="450" y="235" text-anchor="middle" font-family="Arial" font-size="64" font-weight="700" fill="#d9534f">🍅 TOMATO</text>
+<text x="450" y="285" text-anchor="middle" font-family="Arial" font-size="24" fill="#24452d">Tomato • Agricultural Information Hub</text>
+</svg>
