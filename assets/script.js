@@ -1,77 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Contact Form
+
+    // Contact form
     const form = document.getElementById("expertForm");
-    const message = document.getElementById("formMessage");
+    const formMessage = document.getElementById("formMessage");
 
     if (form) {
-
         form.addEventListener("submit", function (event) {
-
             event.preventDefault();
 
             if (form.checkValidity()) {
-
-                message.classList.remove("d-none");
+                formMessage.classList.remove("d-none");
                 form.reset();
-
-            } else {
-
-                form.classList.add("was-validated");
-
             }
         });
     }
 
-    // Farming Guide Filters
-    const filters = document.querySelectorAll(".guide-filter");
-    const guideCards = document.querySelectorAll(".guide-card");
+    // Farming guide filters
+    const cropFilter = document.getElementById("cropFilter");
+    const seasonFilter = document.getElementById("seasonFilter");
+    const methodFilter = document.getElementById("methodFilter");
+    const guides = document.querySelectorAll(".guide");
+    const noResults = document.getElementById("noResults");
 
-    filters.forEach(function (filter) {
+    if (cropFilter && seasonFilter && methodFilter) {
 
-        filter.addEventListener("change", function () {
+        function filterGuides() {
+            const crop = cropFilter.value;
+            const season = seasonFilter.value;
+            const method = methodFilter.value;
+            let found = false;
 
-            filterGuides();
+            guides.forEach(function (guide) {
+                const cropMatch = crop === "all" || guide.dataset.crop === crop;
+                const seasonMatch = season === "all" || guide.dataset.season === season;
+                const methodMatch = method === "all" || guide.dataset.method === method;
 
-        });
+                if (cropMatch && seasonMatch && methodMatch) {
+                    guide.style.display = "block";
+                    found = true;
+                } else {
+                    guide.style.display = "none";
+                }
+            });
 
-    });
-
-
-    function filterGuides() {
-
-        const selectedCrop = filters[0].value;
-        const selectedSeason = filters[1].value;
-        const selectedMethod = filters[2].value;
-
-
-        guideCards.forEach(function (card) {
-
-            const badge = card.querySelector(".badge").textContent;
-
-            const cropMatch =
-                selectedCrop === "All Crop Types" ||
-                badge.includes(selectedCrop);
-
-            const seasonMatch =
-                selectedSeason === "All Seasons" ||
-                badge.includes(selectedSeason);
-
-            const methodMatch =
-                selectedMethod === "All Methods" ||
-                badge.includes(selectedMethod);
-
-
-            if (cropMatch && seasonMatch && methodMatch) {
-
-                card.parentElement.style.display = "block";
-
+            if (found) {
+                noResults.classList.add("d-none");
             } else {
-
-                card.parentElement.style.display = "none";
-
+                noResults.classList.remove("d-none");
             }
+        }
 
-        });
+        cropFilter.addEventListener("change", filterGuides);
+        seasonFilter.addEventListener("change", filterGuides);
+        methodFilter.addEventListener("change", filterGuides);
     }
-
 });

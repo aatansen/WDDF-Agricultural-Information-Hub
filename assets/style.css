@@ -1,81 +1,25 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #243b2a;
-  background: #fff;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
-
-.navbar-brand { letter-spacing: .5px; }
-.min-vh-75 { min-height: 75vh; }
-
-.hero-section {
-  background: linear-gradient(rgba(245, 250, 242, .90), rgba(245, 250, 242, .90)),
-              url("images/farm.svg") center/cover no-repeat;
+.navbar-brand {
+    font-weight: bold;
 }
-
-.hero-section h1 { color: #176b36; }
-.page-banner {
-  background: linear-gradient(135deg, #176b36, #4f9d69);
-  color: white;
-  padding: 70px 0;
+.page-header {
+    background-color: #f1f8f3;
+    padding: 50px 0;
 }
-.page-banner h1 { font-weight: 700; }
-
-.section-heading h2 { color: #176b36; }
-
-.info-card, .form-card, .contact-box {
-  background: white;
-  border: 1px solid #dce8de;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 5px 18px rgba(0,0,0,.06);
+.page-header h1 {
+    color: #198754;
 }
-
-.info-card { transition: transform .2s ease; }
-.info-card:hover { transform: translateY(-5px); }
-
-.icon-box {
-  font-size: 42px;
-  margin-bottom: 15px;
+.card h3,
+.card h4 {
+    color: #198754;
 }
-
-.guide-card {
-  border: 0;
-  box-shadow: 0 5px 18px rgba(0,0,0,.07);
-  border-radius: 12px;
+.crop-image {
+    height: 220px;
+    object-fit: cover;
 }
-.guide-card ol li { margin-bottom: 8px; }
-.tip-box {
-  background: #f0f8f1;
-  border-left: 4px solid #198754;
-  padding: 12px;
-  border-radius: 5px;
-}
-
-.crop-card {
-  height: 100%;
-  overflow: hidden;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 18px rgba(0,0,0,.07);
-}
-.crop-card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  background: #eef6ee;
-}
-.crop-card h3 { color: #176b36; }
-
-.form-card { padding: 32px; }
-.contact-box {
-  background: #f3f8f3;
-  border-color: #b9d7bf;
-}
-.footer { margin-top: 30px; }
-
-.table th { white-space: nowrap; }
-
-@media (max-width: 768px) {
-  .hero-section h1 { font-size: 2.4rem; }
-  .page-banner { padding: 50px 0; }
+footer {
+    margin-top: 30px;
 }
